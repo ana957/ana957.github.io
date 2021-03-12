@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>What am I?</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter|Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="script.js"></script>
+    <script>window.onload = draw;</script>
+    <script>
+    function touch(whichtouched) {
+	
+	if (whichtouched == "moonending") {
+	    yourEpoints=3; 
+	    window.location.replace("moonending.html")
+    } else if (whichtouched == "choice2b") {
+        yourEpoints=1;
+        window.location.replace("2b.html")/*blue*/
+    }
+
+}
+    </script>
+    <style>
+    
+    html{
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: 'Architects Daughter', cursive;
+}
+
+#open{
+      position:absolute;
+}
+body{
+background-image: url(stage2.PNG);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-color: black;
+        
+    
+    
+}
+a{
+    color: #b10000;
+    text-decoration: none;
+}
+    a:hover{
+        text-decoration: underline;
+    }
+    a:visited{
+        color: #b10000;
+    }
+body, html, #category, #category1, #category2, #phrases, #movies, #songs, #challenge, #introPage, #introText, #introText p, #sp, #mp, #sp1, #mp1, #multiPage, #singlePage #wordWrap, #wordWrap div, #restriction, #gamePage, #letterBank div, #challengeBank div, #videoPage{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#introPage, #singlePage, #multiPage, #videoPage{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+#introPage{
+    display: block;
+    height: 650px;
+    width: 850px;
+}
+    #introText{
+        width: 850px;
+        height: 260px;
+        margin: 10px auto;
+    }
+    #introText p, #multiText p{
+        font-size: 40px;
+        text-align: center;
+        margin: 0 auto 20px auto;
+    }
+    #buttonContainer{
+        width: 700px;
+        height: 75px;
+        margin: 50px auto;
+    }
+    #sp, #mp, #sp1, #mp1{
+        font-size: 35px;
+        width: 250px;
+        height: 75px;
+        float: right;
+        line-height: 75px;
+        text-align: center;
+        color: white;
+        background-color: #00006c;
+        border-radius: 25px;
+        cursor: pointer;
+    }
+    #sp{
+        float: left;
+        font-family: helvetica, arial, georgia;
+        background-color: #d9e6f2 ;
+        color: rgb(179, 19, 125) ;
+        border-style: double;
+        margin-top: 230px;
+        margin-left: 820px;
+    }
+    #sp1{
+        margin: 69px 20px 0 0;
+    }
+    #mp1{
+        margin: 50px 20px 0 0;
+    }
+    #homeHangman, #hangman{
+        display: block;
+        margin: 50px auto 0 auto;
+        
+    }
+#singlePage{
+    display: none;
+    height: 560px;
+    width: 845px;
+    
+}
+    #singlePage p{
+        font-size: 40px;
+        margin: 0px auto 40px auto;
+        text-align: center;
+        font-family: helvetica, arial, georgia;
+        color:black;
+        text-shadow: 1px 1px 0px black;
+        background-color:#e6f7ff ;
+        border-radius: 20px;
+    }
+    #categoryHolder{
+        width: 100%;
+        height: 335px;
+    }    
+    #category{
+        width: 700px;
+        height: 335px;
+        margin: 0 auto;
+        
+    }    
+    #category1, #category2{
+        float: left;
+        width: 500px;
+        height: 70px;
+    }
+    #category1{
+        margin-top: 135px;
+        margin-left: 790px;
+    }
+    #phrases, #movies, #songs, #challenge{
+        float: left;
+        width: 48%;
+        height: 100%;
+        font-size: 40px;
+        font-family: helvetica, arial, georgia;
+        line-height: 75px;
+        text-align: center;
+        border: 1px solid black;
+        cursor: pointer;
+    }
+    #challenge, #movies{
+        float: right;
+    }
+    #phrases{
+        background: #742525;
+        background: -webkit-linear-gradient(left, #742525, #a93e3e);
+        background: -o-linear-gradient(left, #742525, #a93e3e);
+        background: -moz-linear-gradient(left, #742525, #a93e3e);
+        background: linear-gradient(to right, #742525, #a93e3e);
+        border-radius: 20px;
+        border-color: #d9e6f2;
+        
+
+    }
+    #movies{
+        background: #147b14;
+        background: -webkit-linear-gradient(left, #39C226, #147b14);
+        background: -o-linear-gradient(right, #39C226, #147b14);
+        background: -moz-linear-gradient(right, #39C226, #147b14);
+        background: linear-gradient(to right, #39C226, #147b14);
+    }
+    #songs{
+        background: #bc7a00;
+        background: -webkit-linear-gradient(left, #bc7a00, white);
+        background: -o-linear-gradient(left, #bc7a00, white);
+        background: -moz-linear-gradient(left, #bc7a00, white);
+        background: linear-gradient(to right, #bc7a00, white);
+    }
+    #challenge{
+        background: #b10000;
+        background: -webkit-linear-gradient(left, white, #b10000);
+        background: -o-linear-gradient(right, white, #b10000);
+        background: -moz-linear-gradient(right, white, #b10000);
+        background: linear-gradient(to right, white, #b10000);
+    }
+#multiPage{
+    display: none;
+    height: 490px;
+    width: 845px;
+}    
+    #wordInput{
+        width: 845px;
+        height: 350px;
+        margin: 0px auto;
+        color: green;
+    }
+    #multiText p{
+        font-size: 29px;
+        color: green;
+    }
+    #input{
+        font-family: sans-serif;
+        display: block;
+        margin: 0px auto;
+        padding: 10px;
+        font-size: 25px;
+        color: white;
+    }
+    #restriction{
+        font-family: sans-serif;
+        float: right;
+        position: relative;
+        right: 175px;
+        bottom: 22px;
+        font-size: 15px;
+        
+    }
+    #characterCount{
+        width: 580px;
+        height: 35px;
+        margin: 21px auto 0 auto;
+        font-size: 25px;
+    }
+    #charContain{
+        margin: 0;
+        float: left;
+    }
+    #submit{
+        font-size: 35px;
+        width: 200px;
+        height: 35px;
+        float: right;
+        line-height: 35px;
+        text-align: center;
+        color: white;
+        background-color: #00b100;
+        border-radius: 25px;
+        cursor: pointer;
+    }
+#gamePage{
+    display: none;
+    text-align: center;
+}
+    #categoryName{
+        width: 100%;
+        margin: 20px auto 0px auto;
+        font-size: 75px;
+        color: white;
+    }    
+    #wordWrap{
+        display: inline-block;
+        width: 830px;
+        margin: 0 auto;
+        padding: 10px;
+        border-color: white;
+    }
+    #letter1, #letter2, #letter3, #letter4, #letter5, #letter6, #letter7, #letter8, #letter9, #letter10, #letter11, #letter12, #letter13, #letter14, #letter15, #letter16, #letter17, #letter18, #letter19, #letter20, #letter21, #letter22, #letter23, #letter24, #letter25, #letter26, #letter27, #letter28, #letter29, #letter30, #letter31, #letter32, #letter33, #letter34, #letter35, #letter36, #letter37, #letter38, #letter39, #letter40, #letter41, #letter42, #letter43, #letter44, #letter45, #letter46, #letter47, #letter48, #letter49, #letter50, #letter51, #letter52, #letter53, #letter54, #letter55, #letter56, #letter57, #letter58, #letter59, #letter60, #letter61, #letter62, #letter63, #letter64, #letter65, #letter66, #letter67, #letter68, #letter69, #letter70, #letter71, #letter72, #letter73, #letter74, #letter75, #letter76, #letter77, #letter78, #letter79, #letter80, #letter81, #letter82, #letter83, #letter84, #letter85, #letter86, #letter87, #letter88, #letter89, #letter90, #letter91, #letter92, #letter93, #letter94, #letter95, #letter96, #letter97, #letter98, #letter99, #letter100{
+        font-family: helvetica, arial, georgia;
+        width: 50px;
+        height: 60px;
+        margin-bottom: 40px;
+        text-align: center;
+        font-size: 50px;
+        line-height: 60px;
+        color: white;
+        text-shadow: 4px 4px 0px black;
+    }
+    #underline1, #underline2, #underline3, #underline4, #underline5, #underline6, #underline7, #underline8, #underline9, #underline10, #underline11, #underline12, #underline13, #underline14, #underline15, #underline16, #underline17, #underline18, #underline19, #underline20, #underline21, #underline22, #underline23, #underline24, #underline25, #underline26, #underline27, #underline28, #underline29, #underline30, #underline31, #underline32, #underline33, #underline34, #underline35, #underline36, #underline37, #underline38, #underline39, #underline40, #underline41, #underline42, #underline43, #underline44, #underline45, #underline46, #underline47, #underline48, #underline49, #underline50, #underline51, #underline52, #underline53, #underline54, #underline55, #underline56, #underline57, #underline58, #underline59, #underline60, #underline61, #underline62, #underline63, #underline64, #underline65, #underline66, #underline67, #underline68, #underline69, #underline70, #underline71, #underline72, #underline73, #underline74, #underline75, #underline76, #underline77, #underline78, #underline79, #underline80, #underline81, #underline82, #underline83, #underline84, #underline85, #underline86, #underline87, #underline88, #underline89, #underline90, #underline91, #underline92, #underline93, #underline94, #underline95, #underline96, #underline97, #underline98, #underline99, #underline100{
+        display: none;
+        float: left;
+        width: 50px;
+        height: 60px;
+        margin-right: 5px;
+        border-color: white;
+        
+    }
+    #letterBank, #challengeBank{
+        width: 780px;
+        height: 125px;
+        margin: 20px auto;
+        font-size: 50px;
+        line-height: 60px;
+        text-align: center;
+        -webkit-user-select: none;        
+        -moz-user-select: none;
+        -ms-user-select: none;
+    }
+    #letterBank div, #challengeBank div{
+        float: left;
+        width: 50px;
+        height: 58px;
+        margin: 0px 10px 10px 0px;
+        cursor: pointer;
+        background-color: #adadad;
+    }
+    #letterBank div:hover, #challengeBank div:hover{
+        background-color: #797979;
+    }
+    #letterBank div:active, #challengeBank div:active{
+        background-color: gray;
+        width: 50px;
+        font-size: 45px;
+        padding-top: 3px;
+    }
+    #results{
+        margin-top: 5px;
+        height: 70px;
+        visibility: hidden;
+        line-height: 70px;
+    }
+    #again, #home, #home1{
+        display: none;
+        width: 50%;
+        height: 65px;
+        margin: 0px auto 20px auto;
+        font-size: 35px;
+        line-height: 65px;
+        text-align: center;
+        color: white;
+        background-color: #00006c;
+        border-radius: 25px;
+        cursor: pointer;
+    }
+    #home{
+        margin-top: 0px;
+    }
+    #home1{
+        margin-top: 32px;
+    }
+    #vidSent{
+        display: none;
+        margin-bottom: 100px;
+        font-size: 30px;
+    }
+#challengeGame{
+    text-align: center;
+}
+#videoPage{
+    display: none;
+    height: 690px;
+    width: 845px;
+}
+    #vidHead, #vidCaption{
+        margin: 20px auto 10px auto;
+        font-size: 60px;
+        text-align: center;
+    }
+    #vidCaption{
+        margin-top: 10px;
+        font-size: 25px;
+    }
+    #video, #videoTab, #videoMob{
+        display: block;
+        margin: 0 auto;
+    }
+    #videoTab, #videoMob{
+        display: none;
+    }
+    #vidLink{
+        color: #b10000;
+    }
+    #vidLink:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+@media (max-width: 866px){
+    #introPage, #singlePage, #multiPage, #videoPage{
+        width: 500px;
+        height: 500px;
+    }
+        #introText{
+            width: 500px;
+            height: 85px;
+        }
+        #introText p, #multiText p{
+            font-size: 25px;
+            margin: 10px auto;
+        }
+        #buttonContainer{
+            width: 500px;
+            height: 60px;
+            margin: 20px auto;
+        }
+        #sp, #mp, #sp1, #mp1{
+            font-size: 25px;
+            width: 175px;
+            height: 60px;
+            line-height: 60px;
+        }
+        #sp1{
+            margin: 25px 10px auto auto;
+        }
+        #mp1{
+            margin: 40px 10px auto auto;
+        }
+        #homeHangman{
+            margin: 100px auto 0 auto;
+            border-style: none;
+        }
+    #singlePage{
+        height: 345px;
+    }
+        #singlePage p{
+            font-size: 30px;
+            margin: 0px auto 20px auto;
+        }
+        #categoryHolder{
+            height: 180px;
+        }    
+        #category{
+            width: 100%;
+            height: 180px;
+        }    
+        #category1, #category2{
+            width: 100%;
+            height: 80px;
+        }
+        #category1{
+            margin-bottom: 20px;
+        }
+        #phrases, #movies, #songs, #challenge{
+            font-size: 35px;
+            line-height: 80px;
+        }
+    #multiPage{
+        height: 350px;
+    }    
+        #wordInput{
+            height: 250px;
+            width: 100%;
+        }
+        #multiText p{
+            font-size: 17.6px;
+        }
+        #input{
+            font-size: 20px;
+        }
+        #restriction{
+            right: 50px;
+            bottom: 18px;
+            font-size: 12px;
+        }
+        #characterCount{
+            width: 500px;
+            height: 30px;
+            margin: 15px auto 0 auto;
+            font-size: 20px;
+        }
+        #submit{
+            font-size: 25px;
+            width: 130px;
+            height: 30px;
+            line-height: 30px;
+        }
+    #gamePage{
+    }
+        #categoryName{
+            margin: 0 auto;
+            font-size: 30px;
+        }    
+        #wordWrap{
+            display: inline-block;
+            width: 470px;
+            margin: 0 auto;
+            padding: 0px;
+            border-color: white;
+        }
+        #letter1, #letter2, #letter3, #letter4, #letter5, #letter6, #letter7, #letter8, #letter9, #letter10, #letter11, #letter12, #letter13, #letter14, #letter15, #letter16, #letter17, #letter18, #letter19, #letter20, #letter21, #letter22, #letter23, #letter24, #letter25, #letter26, #letter27, #letter28, #letter29, #letter30, #letter31, #letter32, #letter33, #letter34, #letter35, #letter36, #letter37, #letter38, #letter39, #letter40, #letter41, #letter42, #letter43, #letter44, #letter45, #letter46, #letter47, #letter48, #letter49, #letter50, #letter51, #letter52, #letter53, #letter54, #letter55, #letter56, #letter57, #letter58, #letter59, #letter60, #letter61, #letter62, #letter63, #letter64, #letter65, #letter66, #letter67, #letter68, #letter69, #letter70, #letter71, #letter72, #letter73, #letter74, #letter75, #letter76, #letter77, #letter78, #letter79, #letter80, #letter81, #letter82, #letter83, #letter84, #letter85, #letter86, #letter87, #letter88, #letter89, #letter90, #letter91, #letter92, #letter93, #letter94, #letter95, #letter96, #letter97, #letter98, #letter99, #letter100{
+            width: 28px;
+            height: 45px;
+            font-size: 30px;
+            line-height: 45px;
+        }
+        #underline1, #underline2, #underline3, #underline4, #underline5, #underline6, #underline7, #underline8, #underline9, #underline10, #underline11, #underline12, #underline13, #underline14, #underline15, #underline16, #underline17, #underline18, #underline19, #underline20, #underline21, #underline22, #underline23, #underline24, #underline25, #underline26, #underline27, #underline28, #underline29, #underline30, #underline31, #underline32, #underline33, #underline34, #underline35, #underline36, #underline37, #underline38, #underline39, #underline40, #underline41, #underline42, #underline43, #underline44, #underline45, #underline46, #underline47, #underline48, #underline49, #underline50, #underline51, #underline52, #underline53, #underline54, #underline55, #underline56, #underline57, #underline58, #underline59, #underline60, #underline61, #underline62, #underline63, #underline64, #underline65, #underline66, #underline67, #underline68, #underline69, #underline70, #underline71, #underline72, #underline73, #underline74, #underline75, #underline76, #underline77, #underline78, #underline79, #underline80, #underline81, #underline82, #underline83, #underline84, #underline85, #underline86, #underline87, #underline88, #underline89, #underline90, #underline91, #underline92, #underline93, #underline94, #underline95, #underline96, #underline97, #underline98, #underline99, #underline100{
+            width: 28px;
+            height: 45px;
+            margin-right: 3px;
+            border-color: white;
+        }
+        #hangman{
+            margin: 20px auto 0 auto;
+        }
+        #letterBank, #challengeBank{
+            width: 430px;
+            height: 145px;
+            margin: 10px auto;
+            font-size: 35px;
+            line-height: 45px;
+        }
+        #letterBank div, #challengeBank div{
+            width: 44px;
+            height: 44px;
+            margin: 0px 3.5px 5px 0px;
+        }
+        #letterBank div:active, #challengeBank div:active{
+            width: 44px;
+            font-size: 27px;
+            padding-top: 0px;
+            padding-bottom: 3px;
+        }
+        #results{
+            margin-top: 5px;
+            height: 50px;
+            visibility: hidden;
+            line-height: 70px;
+        }
+        #again, #home, #home1{
+            display: none;
+            width: 50%;
+            height: 65px;
+            margin: 20px auto 20px auto;
+            font-size: 35px;
+            line-height: 65px;
+            text-align: center;
+            color: white;
+            background-color: #00006c;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        #home{
+            margin-top: 0px;
+        }
+        #vidSent{
+            margin-bottom: 50px;
+            font-size: 25px;
+        }
+    #challengeGame{
+        text-align: center;
+    }
+    #videoPage{
+        display: none;
+        height: 450px;
+    }
+        #vidHead, #vidCaption{
+            margin: 0 auto 10px auto;
+            font-size: 30px;
+            text-align: center;
+        }
+        #vidCaption{
+            margin-top: 10px;
+            font-size: 15px;
+        }
+        #video, #videoTab, #videoMob{
+            display: block;
+        }
+        #video, #videoMob{
+            display: none;
+        }
+}
+
+@media (max-width: 500px){
+    #introPage, #singlePage, #multiPage, #videoPage{
+        height: 100%;
+        width: 100%;
+        min-width: 365px;
+    }
+    #introPage{
+    }
+        #introText{
+            width: 100%;
+        }
+        #introText p, #multiText p{
+            font-size: 18px;
+        }
+        #buttonContainer{
+            width: 90%;
+            height: 50px;
+        }
+        #sp, #mp, #sp1, #mp1{
+            font-size: 20px;
+            width: 140px;
+            height: 50px;
+            line-height: 50px;
+        }
+        #sp1{
+            margin: 20px 10px auto auto;
+        }
+        #mp1{
+            margin: 30px 10px auto auto;
+        }
+        #homeHangman{
+            margin: 70px auto 0 auto;
+            border-style: none;
+
+        }
+    #singlePage{
+        height: 320px;
+    }
+        #categoryHolder{
+            margin: 0 auto;
+            width: 90%;
+            height: 180px;
+        }  
+        #singlePage p{
+            font-size: 25px;
+        }
+    #multiPage{
+        height: 330px;
+    }    
+        #multiText p{
+            font-size: 16px;
+        }
+        #input{
+            padding: 5px;
+            font-size: 15px;
+        }
+        #restriction{
+            right: 85px;
+            bottom: 15px;
+            font-size: 10px;
+        }
+        #characterCount{
+            width: 90%;
+            height: 25px;
+            font-size: 15px;
+        }
+        #submit{
+            font-size: 20px;
+            width: 150px;
+            height: 25px;
+            line-height: 25px;
+        }
+    #gamePage{
+        min-width: 365px;
+    }
+        #categoryName{
+            font-size: 30px;
+        }    
+        #wordWrap{
+            width: 320px;
+            margin-top: 10px;
+            padding: 0px;
+            border-color: white;
+        }
+        #letter1, #letter2, #letter3, #letter4, #letter5, #letter6, #letter7, #letter8, #letter9, #letter10, #letter11, #letter12, #letter13, #letter14, #letter15, #letter16, #letter17, #letter18, #letter19, #letter20, #letter21, #letter22, #letter23, #letter24, #letter25, #letter26, #letter27, #letter28, #letter29, #letter30, #letter31, #letter32, #letter33, #letter34, #letter35, #letter36, #letter37, #letter38, #letter39, #letter40, #letter41, #letter42, #letter43, #letter44, #letter45, #letter46, #letter47, #letter48, #letter49, #letter50, #letter51, #letter52, #letter53, #letter54, #letter55, #letter56, #letter57, #letter58, #letter59, #letter60, #letter61, #letter62, #letter63, #letter64, #letter65, #letter66, #letter67, #letter68, #letter69, #letter70, #letter71, #letter72, #letter73, #letter74, #letter75, #letter76, #letter77, #letter78, #letter79, #letter80, #letter81, #letter82, #letter83, #letter84, #letter85, #letter86, #letter87, #letter88, #letter89, #letter90, #letter91, #letter92, #letter93, #letter94, #letter95, #letter96, #letter97, #letter98, #letter99, #letter100{
+            width: 18px;
+            height: 30px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 30px;
+        }
+        #underline1, #underline2, #underline3, #underline4, #underline5, #underline6, #underline7, #underline8, #underline9, #underline10, #underline11, #underline12, #underline13, #underline14, #underline15, #underline16, #underline17, #underline18, #underline19, #underline20, #underline21, #underline22, #underline23, #underline24, #underline25, #underline26, #underline27, #underline28, #underline29, #underline30, #underline31, #underline32, #underline33, #underline34, #underline35, #underline36, #underline37, #underline38, #underline39, #underline40, #underline41, #underline42, #underline43, #underline44, #underline45, #underline46, #underline47, #underline48, #underline49, #underline50, #underline51, #underline52, #underline53, #underline54, #underline55, #underline56, #underline57, #underline58, #underline59, #underline60, #underline61, #underline62, #underline63, #underline64, #underline65, #underline66, #underline67, #underline68, #underline69, #underline70, #underline71, #underline72, #underline73, #underline74, #underline75, #underline76, #underline77, #underline78, #underline79, #underline80, #underline81, #underline82, #underline83, #underline84, #underline85, #underline86, #underline87, #underline88, #underline89, #underline90, #underline91, #underline92, #underline93, #underline94, #underline95, #underline96, #underline97, #underline98, #underline99, #underline100{
+            width: 18px;
+            height: 30px;
+            margin-right: 3px;
+            border-color: white;
+        }
+        #letterBank, #challengeBank{
+            width: 310px;
+            height: 170px;
+            font-size: 30px;
+            line-height: 40px;
+        }
+        #letterBank div, #challengeBank div{
+            width: 41px;
+            height: 40px;
+            margin: 0px 3px 3px 0px;
+        }
+        #letterBank div:active, #challengeBank div:active{
+            width: 41px;
+            font-size: 25px;
+            padding-top: 0px;
+            padding-bottom: 3px;
+        }
+        #results{
+            margin-top: 5px;
+            height: 40px;
+        }
+        #again, #home, #home1{
+            width: 250px;
+            height: 45px;
+            margin: 10px auto;
+            font-size: 26px;
+            line-height: 45px;
+        }
+        #vidSent{
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+    #videoPage{
+        display: none;
+        height: 320px;
+    }
+        #vidHead, #vidCaption{
+            margin: 0 auto 10px auto;
+            font-size: 30px;
+            text-align: center;
+        }
+        #vidCaption{
+            margin-top: 10px;
+            font-size: 13px;
+        }
+        #video, #videoTab, #videoMob{
+            display: block;
+        }
+        #video, #videoTab{
+            display: none;
+        }
+}
+
+@media (max-width: 450px){
+    #restriction{
+        right: 60px;
+        bottom: 15px;
+        font-size: 10px;
+    }
+}
+   #open{
+      position:absolute;
+      top:50px;
+      left:80px; 
+
+
+}
+    </style>
+    <script>
+    
+var rand = 0;
+var word = "";
+var numWrong = 0;
+var numRight = 0;
+var phraseLength = 0;
+var numChar = 0;
+var phrases = ["chemokine","chemokine","chemokine"];
+var movies = ["flowers","trees","birds","gnomes","trolls","fairies","grass","animals","goblin"];
+
+function sp(){
+    document.getElementById('introPage').style.display = "none";
+    document.getElementById('multiPage').style.display = "none";
+    document.getElementById('singlePage').style.display = "block";
+}
+
+
+
+function phrase(){
+    rand = Math.floor(Math.random()*phrases.length);
+    word = phrases[rand];
+    document.getElementById('singlePage').style.display = "none";
+    document.getElementById('categoryName').innerHTML = "What am I?";
+    hangman();
+}
+
+function movie(){
+    rand = Math.floor(Math.random()*movies.length);
+    word = movies[rand];
+    document.getElementById('singlePage').style.display = "none";
+    document.getElementById('categoryName').innerHTML = "Magical Forests";
+    hangman();
+}
+
+
+
+function challenge(){
+    rand = Math.floor(Math.random()*challenges.length);
+    word = challenges[rand];
+    numChar = 1;
+    var letter = word.substring(0,1);
+        document.getElementById('letter1').innerHTML = letter;
+        document.getElementById('letter1').style.visibility = "hidden";
+        document.getElementById('underline1').style.display = "block";            
+        document.getElementById('underline1').style.borderBottom = "3px solid white";
+    document.getElementById('singlePage').style.display = "none";    
+    document.getElementById('gamePage').style.display = "block";
+    document.getElementById('categoryName').innerHTML = "Guess every letter other than the correct one to win!";
+    document.getElementById('categoryName').style.width = "100%";
+    if(document.getElementById('underline1').offsetWidth == 50){
+        document.getElementById('categoryName').style.fontSize = "45px";
+    }
+    if(document.getElementById('underline1').offsetWidth == 28){
+        document.getElementById('categoryName').style.fontSize = "30px";
+    }
+    if(document.getElementById('underline1').offsetWidth == 18){
+        document.getElementById('categoryName').style.fontSize = "20px";
+    }
+    document.getElementById('letterBank').style.display = "none";
+    document.getElementById('challengeBank').style.display = "block";
+    phraseLength = 1;
+    draw();
+}
+
+function challengeGuess(){
+    var target = event.target || event.srcElement;
+    target.style.visibility = "hidden";
+    var lower = target.id;
+    var upper = document.getElementById(lower).getAttribute('value');
+    var results = document.getElementById('results');
+    if(document.getElementById('letter1').innerHTML === upper){
+        document.getElementById('letter1').style.visibility = "visible";
+        numRight++;
+    }
+    if(numRight==0){
+        numWrong++;
+        hang();
+    }
+    if(numRight==1){
+        results.style.visibility = "visible";
+        results.style.color = "red";
+        results.innerHTML = "You lose!";        
+        if(document.getElementById('underline1').offsetWidth == 50){
+            results.style.fontSize = "200px";
+            results.style.height = "200px";
+            results.style.lineHeight = "200px";
+        }
+        if(document.getElementById('underline1').offsetWidth == 28){
+            results.style.marginTop = "20px";
+            results.style.fontSize = "100px";
+            results.style.height = "100px";
+            results.style.lineHeight = "100px";
+        }
+        if(document.getElementById('underline1').offsetWidth == 18){
+            results.style.marginTop = "15px";
+            results.style.fontSize = "75px";
+            results.style.height = "75px";
+            results.style.lineHeight = "75px";
+        }
+        document.getElementById('challengeBank').style.display = "none";
+        document.getElementById('vidSent').style.display = "block";
+        document.getElementById('again').style.display = "block";
+        document.getElementById('home').style.display = "block";
+    }
+    if(numWrong==25){
+        results.style.visibility = "visible";
+        results.style.color = "#00b100";
+        results.innerHTML = "You win!";        
+        if(document.getElementById('underline1').offsetWidth == 50){
+            results.style.fontSize = "200px";
+            results.style.height = "200px";
+            results.style.lineHeight = "200px";
+        }
+        if(document.getElementById('underline1').offsetWidth == 28){
+            results.style.marginTop = "20px";
+            results.style.fontSize = "100px";
+            results.style.height = "100px";
+            results.style.lineHeight = "100px";
+        }
+        if(document.getElementById('underline1').offsetWidth == 18){
+            results.style.marginTop = "15px";
+            results.style.fontSize = "75px";
+            results.style.height = "75px";
+            results.style.lineHeight = "75px";
+        }
+        document.getElementById('challengeBank').style.display = "none";
+        document.getElementById('vidSent').style.display = "block";
+        document.getElementById('again').style.display = "block";
+        document.getElementById('home').style.display = "block";
+        document.getElementById('letter1').style.visibility = "visible";
+    }
+}
+
+function countChars(countfrom,displayto) {
+    var len = document.getElementById(countfrom).value.length;
+    document.getElementById(displayto).innerHTML = len;
+}
+
+function readText(){
+    word = document.getElementById('input').value;
+    hangman();
+}
+
+function hangman(){
+    var x = word.length;
+        if(x==0){
+            alert("Please enter something into the text box.");
+            return;
+        }
+    var y = x-1;
+    var spaces = 0;
+    var validChar = new Array("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", " ", "?", "!", ",", ".", "-", "'");
+    for(z = 0; z < word.length; z++){
+        var letter = word.substring(y,x);
+        if(validChar.indexOf(letter) > -1){
+            x--;
+            y--;
+        }
+        else{
+            alert("Please remove any special characters.");
+            return;
+        }
+    }
+    x = word.length;
+    y = x-1;
+    while (x>0){
+        numChar++;
+        var letter = word.substring(y,x);
+        if(letter === " "){
+            document.getElementById('letter'+x).innerHTML = "&nbsp;";
+            document.getElementById('letter'+x).style.visibility = "hidden";
+            document.getElementById('letter'+x).style.display = "block";
+            document.getElementById('underline'+x).style.display = "block";
+            spaces++;
+        }
+        else if(letter === "?" || letter === "!" || letter === "," || letter === "." || letter === "-" || letter === "'"){
+            document.getElementById('letter'+x).innerHTML = letter;
+            document.getElementById('letter'+x).style.display = "block";
+            document.getElementById('underline'+x).style.display = "block";
+            spaces++;
+        }
+        else{
+            document.getElementById('letter'+x).innerHTML = letter;
+            document.getElementById('letter'+x).style.visibility = "hidden";
+            document.getElementById('underline'+x).style.display = "block";            
+            document.getElementById('underline'+x).style.borderBottom = "3px solid white";
+        }
+        x--;
+        y--;
+    }
+    phraseLength = word.length - spaces;
+    document.getElementById('multiPage').style.display = "none";
+    document.getElementById('gamePage').style.display = "block";
+    splitWords();
+    document.getElementById('challengeBank').style.display = "none";
+    draw();
+}
+
+function draw(){
+    var ctx = document.getElementById("hangman").getContext('2d');
+        ctx.fillStyle = "white";
+        ctx.lineWidth=3;
+        ctx.fillRect(0, 0, 300, 300);
+        ctx.beginPath(); //vertical bar
+            ctx.moveTo(50,270);
+            ctx.lineTo(50,25);
+            ctx.stroke();
+        ctx.beginPath(); //vertical bar long piece
+            ctx.moveTo(65,270);
+            ctx.lineTo(65,85);
+            ctx.stroke();
+        ctx.beginPath(); //vertical bar short piece
+            ctx.moveTo(65,64);
+            ctx.lineTo(65,40);
+            ctx.stroke();
+        ctx.beginPath(); //horizontal bar
+            ctx.moveTo(49,25);
+            ctx.lineTo(175,25);
+            ctx.stroke();
+        ctx.beginPath(); //horizontal bar short piece
+            ctx.moveTo(49,40);
+            ctx.lineTo(86,40);
+            ctx.stroke();
+        ctx.beginPath(); //horizontal bar long piece
+            ctx.moveTo(106,40);
+            ctx.lineTo(175,40);
+            ctx.stroke();
+        ctx.beginPath(); //small vertical bar
+            ctx.moveTo(173,25);
+            ctx.lineTo(173,40);
+            ctx.stroke();
+        ctx.beginPath(); //cross bar
+            ctx.moveTo(50,80);
+            ctx.lineTo(100,25);
+            ctx.stroke();
+        ctx.beginPath(); //cross bar
+            ctx.moveTo(60,90);
+            ctx.lineTo(111,35);
+            ctx.stroke();
+        ctx.beginPath(); //cross bar
+            ctx.moveTo(50,80);
+            ctx.lineTo(60,90);
+            ctx.stroke();
+        ctx.beginPath(); //cross bar
+            ctx.moveTo(100,25);
+            ctx.lineTo(111,35);
+            ctx.stroke();
+        ctx.beginPath(); //ground
+            ctx.moveTo(35,270);
+            ctx.lineTo(265,270);
+            ctx.stroke();
+        ctx.beginPath(); //noose
+            ctx.moveTo(150,40);
+            ctx.lineTo(150,80);
+            ctx.stroke();
+var cntx = document.getElementById("homeHangman").getContext('2d');
+        cntx.fillStyle = "white";
+        cntx.lineWidth=3;
+        cntx.fillRect(0, 0, 300, 300);
+        cntx.beginPath(); //vertical bar
+            cntx.moveTo(50,270);
+            cntx.lineTo(50,25);
+            cntx.stroke();
+        cntx.beginPath(); //vertical bar long piece
+            cntx.moveTo(65,270);
+            cntx.lineTo(65,85);
+            cntx.stroke();
+        cntx.beginPath(); //vertical bar short piece
+            cntx.moveTo(65,64);
+            cntx.lineTo(65,40);
+            cntx.stroke();
+        cntx.beginPath(); //horizontal bar
+            cntx.moveTo(49,25);
+            cntx.lineTo(175,25);
+            cntx.stroke();
+        cntx.beginPath(); //horizontal bar short piece
+            cntx.moveTo(49,40);
+            cntx.lineTo(86,40);
+            cntx.stroke();
+        cntx.beginPath(); //horizontal bar long piece
+            cntx.moveTo(106,40);
+            cntx.lineTo(175,40);
+            cntx.stroke();
+        cntx.beginPath(); //small vertical bar
+            cntx.moveTo(173,25);
+            cntx.lineTo(173,40);
+            cntx.stroke();
+        cntx.beginPath(); //cross bar
+            cntx.moveTo(50,80);
+            cntx.lineTo(100,25);
+            cntx.stroke();
+        cntx.beginPath(); //cross bar
+            cntx.moveTo(60,90);
+            cntx.lineTo(111,35);
+            cntx.stroke();
+        cntx.beginPath(); //cross bar
+            cntx.moveTo(50,80);
+            cntx.lineTo(60,90);
+            cntx.stroke();
+        cntx.beginPath(); //cross bar
+            cntx.moveTo(100,25);
+            cntx.lineTo(111,35);
+            cntx.stroke();
+        cntx.beginPath(); //ground
+            cntx.moveTo(35,270);
+            cntx.lineTo(265,270);
+            cntx.stroke();
+        cntx.beginPath(); //noose
+            cntx.moveTo(150,40);
+            cntx.lineTo(150,80);
+            cntx.stroke();
+}
+
+
+function splitWords(){
+    var placeKeep = 0;
+    var countBack = 16;
+    if(numChar > 15){
+        while(countBack > 1){
+            if(document.getElementById('letter16').innerHTML == "&nbsp;"){
+                document.getElementById('underline16').style.width = "0px";
+                document.getElementById('underline16').style.marginRight = "0px";
+            }
+            if(document.getElementById('letter'+countBack).innerHTML == "&nbsp;"){
+                document.getElementById('underline'+countBack).style.width = (document.getElementById('underline1').offsetWidth)*(16-countBack)+"px";
+                placeKeep = countBack;
+                countBack = 0;
+            }
+            countBack--;
+        }
+    }
+    for(x=0;x<8;x++){
+        countBack = 15+placeKeep;
+        if(numChar > countBack){
+            while(countBack > 1){
+                if(document.getElementById('letter'+countBack).innerHTML == "&nbsp;"){
+                    document.getElementById('underline'+countBack).style.width = (document.getElementById('underline1').offsetWidth*((16+placeKeep)-countBack))+"px";
+                    placeKeep = countBack;
+                    countBack = 0;
+                }
+                countBack--;
+            }
+        }
+    }
+    
+}
+
+function guessLetter(){
+    var correct = 0;
+    var target = event.target || event.srcElement;
+    target.style.visibility = "hidden";
+    var lower = target.id;
+    var upper = document.getElementById(lower).getAttribute('value');
+    var results = document.getElementById('results');
+    var ul1 = document.getElementById('underline1').offsetWidth;
+    for(a = 1; a < 101; a++){
+        if(document.getElementById('letter'+a).innerHTML === upper || document.getElementById('letter'+a).innerHTML === lower){
+            document.getElementById('letter'+a).style.visibility = "visible";
+            correct++;
+            numRight++;
+        }
+    }
+    if(correct==0){
+        numWrong++;
+        hang();
+    }
+    if(numWrong==9){
+        results.style.visibility = "visible";
+        results.style.color = "#014953";
+        results.style.font.weight = "bolder";
+        results.innerHTML = "Last chance!";
+        if(ul1 == 50){
+            results.style.lineHeight = "40px";
+            results.style.fontSize = "40px";
+        }
+        if(ul1 == 28){
+            results.style.lineHeight = "40px";
+            results.style.fontSize = "40px";
+        }
+        if(ul1 == 18){
+            results.style.lineHeight = "40px";
+            results.style.fontSize = "40px";
+        }
+    }
+
+    if(numWrong==10){
+        results.innerHTML = "You lose!";
+        document.getElementById('letterBank').style.display = "none";
+        again.style.display = "block";
+        document.getElementById('home').style.display = "none";
+        document.getElementById('vidSent').style.display = "none";
+        if(ul1 == 50){
+            results.style.lineHeight = "40px";
+        }
+        if(ul1 == 28){
+            results.style.lineHeight = "25px";
+        }
+        if(ul1 == 18){
+            results.style.lineHeight = "20px";
+        }
+    }
+    if(numRight==phraseLength){
+        win();
+    }
+}
+
+function win(){
+    var ul1 = document.getElementById('underline1').offsetWidth;
+    var again = document.getElementById('again');
+    var results = document.getElementById('results');
+        results.style.visibility = "visible";
+        results.style.color = "#00b100";
+    if(numWrong > 6){
+        results.innerHTML = "";
+        document.getElementById('letterBank').style.display = "none";
+        again.style.display = "block";
+        document.getElementById('home').style.display = "block";
+        document.getElementById('vidSent').style.display = "block";
+        if(ul1 == 50){
+            results.style.lineHeight = "70px";
+            results.style.fontSize = "30px";
+        }
+        if(ul1 == 28){
+            results.style.lineHeight = "50px";
+            results.style.fontSize = "25px";
+        }
+        if(ul1 == 18){
+            results.style.lineHeight = "40px";
+            results.style.fontSize = "20px";
+        }
+    }
+    else{
+        results.innerHTML = "Unlocked!";
+        document.getElementById('letterBank').style.display = "none";
+        again.style.display = "block";
+        document.getElementById('home').style.display = "block";
+        document.getElementById('vidSent').style.display = "block";
+        if(ul1 == 50){
+            again.style.marginTop = "0px";
+            results.style.marginTop = "15px";
+            results.style.fontSize = "55px";
+            results.style.color = "#00391E";
+        }
+        if(ul1 == 28){
+            again.style.marginTop = "0px";
+            results.style.marginTop = "15px";
+            results.style.fontSize = "55px";
+            results.style.color = "#00391E";
+        }
+        if(ul1 == 18){
+            again.style.marginTop = "0px";
+            results.style.marginTop = "15px";
+            results.style.fontSize = "55px";
+            results.style.color = "#00391E";
+        }
+    }
+}
+
+
+function hang(){
+    var ctx = document.getElementById("hangman").getContext('2d');
+    if(numWrong==1){
+        ctx.beginPath(); //head
+            ctx.arc(150, 100, 20, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //left eye
+            ctx.arc(143, 95, 3.5, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //right eye
+            ctx.arc(157, 95, 3.5, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //mouth
+            ctx.arc(150, 103, 9, 0, Math.PI);
+            ctx.stroke();
+    }
+    if(numWrong==2){
+        ctx.beginPath(); //body
+            ctx.moveTo(150,120);
+            ctx.lineTo(150,190);
+            ctx.stroke();
+    }
+    if(numWrong==3){
+        ctx.fillStyle = "white";
+        ctx.fillRect(138, 102, 24, 12); //cover mouth
+        ctx.beginPath(); //straight mouth
+            ctx.moveTo(140,108);
+            ctx.lineTo(160,108);
+            ctx.stroke();
+        ctx.beginPath(); //right arm
+            ctx.moveTo(150,135);
+            ctx.lineTo(180,160);
+            ctx.stroke();
+    }
+    if(numWrong==4){
+        ctx.beginPath(); //left arm
+            ctx.moveTo(150,135);
+            ctx.lineTo(120,160);
+            ctx.stroke();
+    }
+    if(numWrong==5){
+        ctx.fillRect(138, 102, 24, 12); //cover mouth
+        ctx.beginPath(); //sad mouth
+            ctx.arc(150, 112, 9, 0, Math.PI, true);
+            ctx.stroke();
+        ctx.beginPath(); //right leg
+            ctx.moveTo(149,188);
+            ctx.lineTo(180,230);
+            ctx.stroke();
+    }
+    if(numWrong==6){
+        ctx.beginPath(); //left leg
+            ctx.moveTo(151,188);
+            ctx.lineTo(120,230);
+            ctx.stroke();
+    }
+    if(numWrong==7){
+        ctx.fillRect(138, 90, 24, 24); //cover face
+        ctx.fillRect(118, 121.2, 70, 120); //cover body
+        ctx.beginPath(); //straight mouth
+            ctx.moveTo(140,108);
+            ctx.lineTo(160,108);
+            ctx.stroke();
+        ctx.beginPath(); //body
+            ctx.moveTo(150,135);
+            ctx.lineTo(150,205);
+            ctx.stroke();
+        ctx.beginPath(); //right arm
+            ctx.moveTo(150,150);
+            ctx.lineTo(180,175);
+            ctx.stroke();
+        ctx.beginPath(); //left arm
+            ctx.moveTo(150,150);
+            ctx.lineTo(120,175);
+            ctx.stroke();
+        ctx.beginPath(); //right leg
+            ctx.moveTo(149,203);
+            ctx.lineTo(180,245);
+            ctx.stroke();
+        ctx.beginPath(); //left leg
+            ctx.moveTo(151,203);
+            ctx.lineTo(120,245);
+            ctx.stroke();
+        ctx.lineWidth=2;
+        ctx.beginPath(); //left eye
+            ctx.moveTo(140,93);
+            ctx.lineTo(146,98);
+            ctx.stroke();
+            ctx.moveTo(140,98);
+            ctx.lineTo(146,93);
+            ctx.stroke();
+        ctx.beginPath(); //right eye
+            ctx.moveTo(154,98);
+            ctx.lineTo(160,93);
+            ctx.stroke(); 
+            ctx.moveTo(154,93);
+            ctx.lineTo(160,98);
+            ctx.stroke();
+    }
+    if(numWrong==8){
+        ctx.fillRect(118, 135, 70, 120); //cover body
+        ctx.lineWidth=3;
+        ctx.beginPath(); //body
+            ctx.moveTo(150,150);
+            ctx.lineTo(150,220);
+            ctx.stroke();
+        ctx.beginPath(); //right arm
+            ctx.moveTo(150,165);
+            ctx.lineTo(180,180);
+            ctx.stroke();
+        ctx.beginPath(); //left arm
+            ctx.moveTo(150,165);
+            ctx.lineTo(120,180);
+            ctx.stroke();
+        ctx.beginPath(); //right leg
+            ctx.moveTo(149,218);
+            ctx.lineTo(180,260);
+            ctx.stroke();
+        ctx.beginPath(); //left leg
+            ctx.moveTo(151,218);
+            ctx.lineTo(120,260);
+            ctx.stroke();
+    }
+    if(numWrong==9){
+        ctx.fillRect(118, 143, 70, 120); //cover body
+        ctx.lineWidth=3;
+        ctx.beginPath(); //body
+            ctx.moveTo(150,165);
+            ctx.lineTo(150,235);
+            ctx.stroke();
+        ctx.beginPath(); //right arm
+            ctx.moveTo(150,180);
+            ctx.lineTo(180,195);
+            ctx.stroke();
+        ctx.beginPath(); //left arm
+            ctx.moveTo(150,180);
+            ctx.lineTo(120,195);
+            ctx.stroke();
+        ctx.beginPath(); //right leg
+            ctx.moveTo(149,232);
+            ctx.lineTo(180,270);
+            ctx.stroke();
+        ctx.beginPath(); //left leg
+            ctx.moveTo(151,232);
+            ctx.lineTo(120,270);
+            ctx.stroke();
+    }
+    if(numWrong==10){
+        ctx.fillRect(118, 148, 70, 120); //cover body
+        ctx.lineWidth=3;
+        ctx.beginPath(); //body
+            ctx.moveTo(150,180);
+            ctx.lineTo(150,250);
+            ctx.stroke();
+        ctx.beginPath(); //right arm
+            ctx.moveTo(150,195);
+            ctx.lineTo(180,210);
+            ctx.stroke();
+        ctx.beginPath(); //left arm
+            ctx.moveTo(150,195);
+            ctx.lineTo(120,210);
+            ctx.stroke();
+        ctx.beginPath(); //right leg
+            ctx.moveTo(149,247);
+            ctx.lineTo(200,270);
+            ctx.stroke();
+        ctx.beginPath(); //left leg
+            ctx.moveTo(151,247);
+            ctx.lineTo(100,270);
+            ctx.stroke();
+    }
+    if(numWrong==11){
+        ctx.fillRect(90, 148, 120, 120); //cover body
+        ctx.lineWidth=3;
+        ctx.beginPath(); //body
+            ctx.moveTo(200,195);
+            ctx.lineTo(150,268);
+            ctx.stroke();
+        ctx.beginPath(); //right arm
+            ctx.moveTo(191,210);
+            ctx.lineTo(220,245);
+            ctx.stroke();
+        ctx.beginPath(); //left arm
+            ctx.moveTo(191,210);
+            ctx.lineTo(145,237);
+            ctx.stroke();
+        ctx.beginPath(); //right leg
+            ctx.moveTo(149,268);
+            ctx.lineTo(210,268);
+            ctx.stroke();
+        ctx.beginPath(); //left leg
+            ctx.moveTo(151,268);
+            ctx.lineTo(90,268);
+            ctx.stroke();
+    }
+    if(numWrong==12){
+        ctx.fillRect(90, 145, 140, 120); //cover body
+        ctx.lineWidth=3;
+        ctx.beginPath(); //body
+            ctx.moveTo(230,220);
+            ctx.lineTo(150,268);
+            ctx.stroke();
+        ctx.beginPath(); //right arm
+            ctx.moveTo(212,230);
+            ctx.lineTo(240,255);
+            ctx.stroke();
+        ctx.beginPath(); //left arm
+            ctx.moveTo(212,230);
+            ctx.lineTo(165,237);
+            ctx.stroke();
+    }
+    if(numWrong==13){
+        ctx.fillRect(90, 145, 160, 120); //cover body
+        ctx.lineWidth=3;
+        ctx.beginPath(); //body
+            ctx.moveTo(245,255);
+            ctx.lineTo(150,268);
+            ctx.stroke();
+        ctx.beginPath(); //right arm
+            ctx.moveTo(225,255);
+            ctx.lineTo(255,268);
+            ctx.stroke();
+        ctx.beginPath(); //left arm
+            ctx.moveTo(225,255);
+            ctx.lineTo(185,250);
+            ctx.stroke();
+    }
+    if(numWrong==14){
+        ctx.fillRect(90, 145, 160, 120); //cover body
+        ctx.lineWidth=3;
+        ctx.beginPath(); //body
+            ctx.moveTo(245,264);
+            ctx.lineTo(150,268);
+            ctx.stroke();
+        ctx.beginPath(); //right arm
+            ctx.moveTo(225,268);
+            ctx.lineTo(255,268);
+            ctx.stroke();
+        ctx.beginPath(); //left arm
+            ctx.moveTo(225,264);
+            ctx.lineTo(185,264);
+            ctx.stroke();
+        ctx.fillRect(138, 90, 24, 24); //cover face
+        ctx.beginPath(); //straight mouth
+            ctx.moveTo(140,108);
+            ctx.lineTo(160,108);
+            ctx.stroke();
+        ctx.beginPath(); //left eye
+            ctx.arc(143, 95, 3.5, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //right eye
+            ctx.arc(157, 95, 3.5, 0, 2*Math.PI);
+            ctx.stroke();
+    }
+    if(numWrong==15){
+        ctx.fillRect(138, 102, 24, 12); //cover mouth
+        ctx.beginPath(); //mouth
+            ctx.arc(150, 103, 9, 0, Math.PI);
+            ctx.stroke();
+    }
+    if(numWrong==16){
+        ctx.fillRect(128, 78, 45, 45); //cover head
+        ctx.beginPath(); //head
+            ctx.arc(150, 120, 20, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //left eye
+            ctx.arc(143, 115, 3.5, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //right eye
+            ctx.arc(157, 115, 3.5, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //mouth
+            ctx.arc(150, 123, 9, 0, Math.PI);
+            ctx.stroke();
+    }
+    if(numWrong==17){
+        ctx.fillRect(128, 98, 45, 45); //cover head
+        ctx.beginPath(); //head
+            ctx.arc(150, 140, 20, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //left eye
+            ctx.arc(143, 135, 3.5, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //right eye
+            ctx.arc(157, 135, 3.5, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //mouth
+            ctx.arc(150, 143, 9, 0, Math.PI);
+            ctx.stroke();
+    }
+    if(numWrong==17){
+        ctx.fillRect(128, 118, 45, 45); //cover head
+        ctx.beginPath(); //head
+            ctx.arc(150, 160, 20, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //left eye
+            ctx.arc(143, 155, 3.5, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //right eye
+            ctx.arc(157, 155, 3.5, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //straight mouth
+            ctx.moveTo(140,168);
+            ctx.lineTo(160,168);
+            ctx.stroke();
+    }
+    if(numWrong==18){
+        ctx.fillRect(128, 138, 45, 45); //cover head
+        ctx.beginPath(); //head
+            ctx.arc(150, 180, 20, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //left eye
+            ctx.arc(143, 175, 3.5, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //right eye
+            ctx.arc(157, 175, 3.5, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //straight mouth
+            ctx.moveTo(140,188);
+            ctx.lineTo(160,188);
+            ctx.stroke();
+    }
+    if(numWrong==19){
+        ctx.fillRect(128, 158, 45, 45); //cover head
+        ctx.beginPath(); //head
+            ctx.arc(150, 200, 20, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //left eye
+            ctx.arc(143, 195, 3.5, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //right eye
+            ctx.arc(157, 195, 3.5, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //sad mouth
+            ctx.arc(150, 213, 9, 0, Math.PI, true);
+            ctx.stroke();
+    }
+    if(numWrong==20){
+        ctx.fillRect(128, 178, 45, 45); //cover head
+        ctx.beginPath(); //head
+            ctx.arc(150, 220, 20, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //left eye
+            ctx.arc(143, 215, 3.5, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //right eye
+            ctx.arc(157, 215, 3.5, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //sad mouth
+            ctx.arc(150, 233, 9, 0, Math.PI, true);
+            ctx.stroke();
+    }
+    if(numWrong==21){
+        ctx.fillRect(128, 198, 45, 45); //cover head
+        ctx.beginPath(); //head
+            ctx.arc(150, 240, 20, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //left eye
+            ctx.arc(143, 235, 3.5, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //right eye
+            ctx.arc(157, 235, 3.5, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //sad mouth
+            ctx.arc(150, 253, 9, 0, Math.PI, true);
+            ctx.stroke();
+    }
+    if(numWrong==22){
+        ctx.fillRect(128, 218, 45, 45); //cover head
+        ctx.beginPath(); //head
+            ctx.arc(150, 243, 20, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //left eye
+            ctx.moveTo(140,234);
+            ctx.lineTo(146,239);
+            ctx.stroke();
+            ctx.moveTo(140,239);
+            ctx.lineTo(146,234);
+            ctx.stroke();
+        ctx.beginPath(); //right eye
+            ctx.moveTo(154,234);
+            ctx.lineTo(160,239);
+            ctx.stroke(); 
+            ctx.moveTo(154,239);
+            ctx.lineTo(160,234);
+            ctx.stroke();
+        ctx.beginPath(); //straight mouth
+            ctx.moveTo(140,250);
+            ctx.lineTo(160,250);
+            ctx.stroke();
+    }
+    if(numWrong==23){
+        ctx.fillRect(128, 220, 45, 45); //cover head
+        ctx.beginPath(); //head
+            ctx.arc(129, 246, 20, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //left eye
+            ctx.moveTo(115,245);
+            ctx.lineTo(121,250);
+            ctx.stroke();
+            ctx.moveTo(115,250);
+            ctx.lineTo(121,245);
+            ctx.stroke();
+        ctx.beginPath(); //right eye
+            ctx.moveTo(120,234);
+            ctx.lineTo(126,239);
+            ctx.stroke(); 
+            ctx.moveTo(120,239);
+            ctx.lineTo(126,234);
+            ctx.stroke();
+        ctx.beginPath(); //straight mouth
+            ctx.moveTo(129,257);
+            ctx.lineTo(138,240);
+            ctx.stroke();
+    }
+    if(numWrong==24){
+        ctx.fillRect(106, 218, 45, 45); //cover head
+        ctx.fillRect(120, 261, 25, 5); //cover rest of head
+        ctx.beginPath(); //head
+            ctx.arc(108, 247, 20, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //left eye
+            ctx.moveTo(105,257);
+            ctx.lineTo(111,262);
+            ctx.stroke();
+            ctx.moveTo(105,262);
+            ctx.lineTo(111,257);
+            ctx.stroke();
+        ctx.beginPath(); //right eye
+            ctx.moveTo(94,248);
+            ctx.lineTo(100,253);
+            ctx.stroke(); 
+            ctx.moveTo(94,253);
+            ctx.lineTo(100,248);
+            ctx.stroke();
+        ctx.beginPath(); //straight mouth
+            ctx.moveTo(121,248);
+            ctx.lineTo(101,235);
+            ctx.stroke();
+    }
+    if(numWrong==25){
+        ctx.fillRect(86, 220, 45, 45); //cover head
+        ctx.beginPath(); //head
+            ctx.arc(87, 248, 20, 0, 2*Math.PI);
+            ctx.stroke();
+        ctx.beginPath(); //left eye
+            ctx.moveTo(78,250);
+            ctx.lineTo(84,256);
+            ctx.stroke();
+            ctx.moveTo(78,256);
+            ctx.lineTo(84,250);
+            ctx.stroke();
+        ctx.beginPath(); //right eye
+            ctx.moveTo(91,250);
+            ctx.lineTo(97,256);
+            ctx.stroke(); 
+            ctx.moveTo(91,256);
+            ctx.lineTo(97,250);
+            ctx.stroke();
+        ctx.beginPath(); //straight mouth
+            ctx.moveTo(77,240);
+            ctx.lineTo(97,240);
+            ctx.stroke();
+    }
+}
+
+function reset(){
+    var ul1 = document.getElementById('underline1').offsetWidth;
+    var results = document.getElementById('results');
+    var again = document.getElementById('again');
+    for(a = 1; a < 101; a++){
+        document.getElementById('letter'+a).innerHTML = "&nbsp;";
+        document.getElementById('underline'+a).style.width = ul1 + "px";
+        if(ul1 == 50){
+            document.getElementById('underline'+a).style.marginRight = "5px";
+            results.style.height = "70px";
+        }
+        else if(ul1 == 28){
+            document.getElementById('underline'+a).style.marginRight = "3px";
+            results.style.height = "50px";
+        }
+        else{
+            document.getElementById('underline'+a).style.marginRight = "3px";
+            results.style.height = "40px";
+        }
+        document.getElementById('underline'+a).style.display = "none";
+        document.getElementById('underline'+a).style.borderBottom = "0px";
+    }
+    var bank = document.getElementById("letterBank").querySelectorAll("div");
+    var cBank = document.getElementById("challengeBank").querySelectorAll("div");
+    for(b = 0; b < 26; b++){
+        bank[b].style.visibility = "visible";
+        cBank[b].style.visibility = "visible";
+    }
+    numWrong = 0;
+    numRight = 0;
+    phraseLength = 0;
+    numChar = 0;
+    results.style.marginTop = "5px";
+    results.style.lineHeight = "40px";
+    results.innerHTML = " ";
+    document.getElementById('vidSent').style.display = "none";
+    document.getElementById('letterBank').style.display = "block";
+    again.style.marginTop = "0px";
+    again.style.display = "none";
+    document.getElementById('home').style.display = "none";
+    if(phrases.indexOf(word) > -1){
+        phrases.splice(rand,1);
+        phrase();
+    }
+    else if(movies.indexOf(word) > -1){
+        movies.splice(rand,1);
+        movie();
+    }
+    else if(songs.indexOf(word) > -1){
+        songs.splice(rand,1);
+        song();
+    }
+    else if(document.getElementById('charcount').innerHTML > 0){
+        document.getElementById('gamePage').style.display = "none";
+        document.getElementById('input').value = "";
+        document.getElementById('charcount').innerHTML = "0";
+        document.getElementById('multiPage').style.display = "block";
+    }
+    else{
+        challenge();
+    }
+}
+
+function divVisibility() {
+			adiv = document.getElementById(arguments[0]);
+			showhide = arguments[1];
+			adiv.style.visibility = showhide;
+		}
+
+</script>
+   
+</head>
+
+<body>
+<div id="kay">
+
+    <div id="introPage">
+        <div id="introText">
+            
+            <div id="buttonContainer">
+                <a href="#"  onclick=" javascript:divVisibility('open', 'hidden');" ><div id="sp" onclick="sp()">Level 1</div></a>
+        
+            </div>
+        </div>
+        <canvas id="homeHangman" width="300px" height="300px"></canvas>
+    </div>
+    <div id="singlePage">
+         <p> My molecules bring all the leukocytes to the yard. </p>
+        <div id="categoryHolder">
+            <div id="category">
+                <div id="category1">
+                    <div id="phrases" onclick="phrase()">Begin</div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="multiPage">
+        <div id="wordInput">
+            <div id="multiText">
+                <p>The phrase guesser should look away from the screen now.</p>
+                <p>Phrase creator, type your phrase and click submit!</p>
+            </div>
+            <div id="inputContainer">
+                <textarea id="input" cols="40" rows="5" onkeyup = "countChars('input','charcount');" onkeydown = "countChars('input','charcount');" onmouseout = "countChars('input','charcount');"></textarea>
+                <span id="restriction">Only special characters allowed: <span style="font-weight: 700;">? ! , . ' &ndash;</span></span>
+            </div>
+            <div id="characterCount">
+                <p id="charContain">
+                    <span id="charcount">0</span>/100 characters
+                </p>
+                <div id="submit" onclick="readText()">Submit</div>
+            </div>
+            <div id="sp1" onclick="sp()">Single player</div>
+        </div>
+    </div>
+    <div id="gamePage">
+        <p id="categoryName"></p>
+        <div id="wordWrap" >
+            <div id="underline1">
+                <div id="letter1"></div>
+            </div>
+            <div id="underline2">
+                <div id="letter2"></div>
+            </div>
+            <div id="underline3">
+                <div id="letter3"></div>
+            </div>
+            <div id="underline4">
+                <div id="letter4"></div>
+            </div>
+            <div id="underline5">
+                <div id="letter5"></div>
+            </div>
+            <div id="underline6">
+                <div id="letter6"></div>
+            </div>
+            <div id="underline7">
+                <div id="letter7"></div>
+            </div>
+            <div id="underline8">
+                <div id="letter8"></div>
+            </div>
+            <div id="underline9">
+                <div id="letter9"></div>
+            </div>
+            <div id="underline10">
+                <div id="letter10"></div>
+            </div>
+            <div id="underline11">
+                <div id="letter11"></div>
+            </div>
+            <div id="underline12">
+                <div id="letter12"></div>
+            </div>
+            <div id="underline13">
+                <div id="letter13"></div>
+            </div>
+            <div id="underline14">
+                <div id="letter14"></div>
+            </div>
+            <div id="underline15">
+                <div id="letter15"></div>
+            </div>
+            <div id="underline16">
+                <div id="letter16"></div>
+            </div>
+            <div id="underline17">
+                <div id="letter17"></div>
+            </div>
+            <div id="underline18">
+                <div id="letter18"></div>
+            </div>
+            <div id="underline19">
+                <div id="letter19"></div>
+            </div>
+            <div id="underline20">
+                <div id="letter20"></div>
+            </div>
+            <div id="underline21">
+                <div id="letter21"></div>
+            </div>
+            <div id="underline22">
+                <div id="letter22"></div>
+            </div>
+            <div id="underline23">
+                <div id="letter23"></div>
+            </div>
+            <div id="underline24">
+                <div id="letter24"></div>
+            </div>
+            <div id="underline25">
+                <div id="letter25"></div>
+            </div>
+            <div id="underline26">
+                <div id="letter26"></div>
+            </div>
+            <div id="underline27">
+                <div id="letter27"></div>
+            </div>
+            <div id="underline28">
+                <div id="letter28"></div>
+            </div>
+            <div id="underline29">
+                <div id="letter29"></div>
+            </div>
+            <div id="underline30">
+                <div id="letter30"></div>
+            </div>
+            <div id="underline31">
+                <div id="letter31"></div>
+            </div>
+            <div id="underline32">
+                <div id="letter32"></div>
+            </div>
+            <div id="underline33">
+                <div id="letter33"></div>
+            </div>
+            <div id="underline34">
+                <div id="letter34"></div>
+            </div>
+            <div id="underline35">
+                <div id="letter35"></div>
+            </div>
+            <div id="underline36">
+                <div id="letter36"></div>
+            </div>
+            <div id="underline37">
+                <div id="letter37"></div>
+            </div>
+            <div id="underline38">
+                <div id="letter38"></div>
+            </div>
+            <div id="underline39">
+                <div id="letter39"></div>
+            </div>
+            <div id="underline40">
+                <div id="letter40"></div>
+            </div>
+            <div id="underline41">
+                <div id="letter41"></div>
+            </div>
+            <div id="underline42">
+                <div id="letter42"></div>
+            </div>
+            <div id="underline43">
+                <div id="letter43"></div>
+            </div>
+            <div id="underline44">
+                <div id="letter44"></div>
+            </div>
+            <div id="underline45">
+                <div id="letter45"></div>
+            </div>
+            <div id="underline46">
+                <div id="letter46"></div>
+            </div>
+            <div id="underline47">
+                <div id="letter47"></div>
+            </div>
+            <div id="underline48">
+                <div id="letter48"></div>
+            </div>
+            <div id="underline49">
+                <div id="letter49"></div>
+            </div>
+            <div id="underline50">
+                <div id="letter50"></div> 
+            </div>               
+            <div id="underline51">
+                <div id="letter51"></div>
+            </div>
+            <div id="underline52">
+                <div id="letter52"></div>
+            </div>
+            <div id="underline53">
+                <div id="letter53"></div>
+            </div>
+            <div id="underline54">
+                <div id="letter54"></div>
+            </div>
+            <div id="underline55">
+                <div id="letter55"></div>
+            </div>
+            <div id="underline56">
+                <div id="letter56"></div>
+            </div>
+            <div id="underline57">
+                <div id="letter57"></div>
+            </div>
+            <div id="underline58">
+                <div id="letter58"></div>
+            </div>
+            <div id="underline59">
+                <div id="letter59"></div>
+            </div>
+            <div id="underline60">
+                <div id="letter60"></div>
+            </div>
+            <div id="underline61">
+                <div id="letter61"></div>
+            </div>
+            <div id="underline62">
+                <div id="letter62"></div>
+            </div>
+            <div id="underline63">
+                <div id="letter63"></div>
+            </div>
+            <div id="underline64">
+                <div id="letter64"></div>
+            </div>
+            <div id="underline65">
+                <div id="letter65"></div>
+            </div>
+            <div id="underline66">
+                <div id="letter66"></div>
+            </div>
+            <div id="underline67">
+                <div id="letter67"></div>
+            </div>
+            <div id="underline68">
+                <div id="letter68"></div>
+            </div>
+            <div id="underline69">
+                <div id="letter69"></div>
+            </div>
+            <div id="underline70">
+                <div id="letter70"></div>
+            </div>
+            <div id="underline71">
+                <div id="letter71"></div>
+            </div>
+            <div id="underline72">
+                <div id="letter72"></div>
+            </div>
+            <div id="underline73">
+                <div id="letter73"></div>
+            </div>
+            <div id="underline74">
+                <div id="letter74"></div>
+            </div>
+            <div id="underline75">
+                <div id="letter75"></div>
+            </div>
+            <div id="underline76">
+                <div id="letter76"></div>
+            </div>
+            <div id="underline77">
+                <div id="letter77"></div>
+            </div>
+            <div id="underline78">
+                <div id="letter78"></div>
+            </div>
+            <div id="underline79">
+                <div id="letter79"></div>
+            </div>
+            <div id="underline80">
+                <div id="letter80"></div>
+            </div>
+            <div id="underline81">
+                <div id="letter81"></div>
+            </div>
+            <div id="underline82">
+                <div id="letter82"></div>
+            </div>
+            <div id="underline83">
+                <div id="letter83"></div>
+            </div>
+            <div id="underline84">
+                <div id="letter84"></div>
+            </div>
+            <div id="underline85">
+                <div id="letter85"></div>
+            </div>
+            <div id="underline86">
+                <div id="letter86"></div>
+            </div>
+            <div id="underline87">
+                <div id="letter87"></div>
+            </div>
+            <div id="underline88">
+                <div id="letter88"></div>
+            </div>
+            <div id="underline89">
+                <div id="letter89"></div>
+            </div>
+            <div id="underline90">
+                <div id="letter90"></div>
+            </div>
+            <div id="underline91">
+                <div id="letter91"></div>
+            </div>
+            <div id="underline92">
+                <div id="letter92"></div>
+            </div>
+            <div id="underline93">
+                <div id="letter93"></div>
+            </div>
+            <div id="underline94">
+                <div id="letter94"></div>
+            </div>
+            <div id="underline95">
+                <div id="letter95"></div>
+            </div>
+            <div id="underline96">
+                <div id="letter96"></div>
+            </div>
+            <div id="underline97">
+                <div id="letter97"></div>
+            </div>
+            <div id="underline98">
+                <div id="letter98"></div>
+            </div>
+            <div id="underline99">
+                <div id="letter99"></div>
+            </div>
+            <div id="underline100">
+                <div id="letter100"></div>
+            </div>
+        </div>
+        <canvas id="hangman" width="300px" height="300px"></canvas>
+        <div id="results"></div>
+        <div id="letterBank">
+                <div id="a" value="A" onclick="guessLetter()">A</div><div id="b" value="B" onclick="guessLetter()">B</div><div id="c" value="C" onclick="guessLetter()">C</div><div id="d" value="D" onclick="guessLetter()">D</div><div id="e" value="E" onclick="guessLetter()">E</div><div id="f" value="F" onclick="guessLetter()">F</div><div id="g" value="G" onclick="guessLetter()">G</div><div id="h" value="H" onclick="guessLetter()">H</div><div id="i" value="I" onclick="guessLetter()">I</div><div id="j" value="J" onclick="guessLetter()">J</div><div id="k" value="K" onclick="guessLetter()">K</div><div id="l" value="L" onclick="guessLetter()">L</div><div id="m" value="M" onclick="guessLetter()">M</div><div id="n" value="N" onclick="guessLetter()">N</div><div id="o" value="O" onclick="guessLetter()">O</div><div id="p" value="P" onclick="guessLetter()">P</div><div id="q" value="Q" onclick="guessLetter()">Q</div><div id="r" value="R" onclick="guessLetter()">R</div><div id="s" value="S" onclick="guessLetter()">S</div><div id="t" value="T" onclick="guessLetter()">T</div><div id="u" value="U" onclick="guessLetter()">U</div><div id="v" value="V" onclick="guessLetter()">V</div><div id="w" value="W" onclick="guessLetter()">W</div><div id="x" value="X" onclick="guessLetter()">X</div><div id="y" value="Y" onclick="guessLetter()">Y</div><div id="z" value="Z" onclick="guessLetter()">Z</div>
+        </div>
+        <div id="challengeBank">
+                <div id="a" value="A" onclick="challengeGuess()">A</div><div id="b" value="B" onclick="challengeGuess()">B</div><div id="c" value="C" onclick="challengeGuess()">C</div><div id="d" value="D" onclick="challengeGuess()">D</div><div id="e" value="E" onclick="challengeGuess()">E</div><div id="f" value="F" onclick="challengeGuess()">F</div><div id="g" value="G" onclick="challengeGuess()">G</div><div id="h" value="H" onclick="challengeGuess()">H</div><div id="i" value="I" onclick="challengeGuess()">I</div><div id="j" value="J" onclick="challengeGuess()">J</div><div id="k" value="K" onclick="challengeGuess()">K</div><div id="l" value="L" onclick="challengeGuess()">L</div><div id="m" value="M" onclick="challengeGuess()">M</div><div id="n" value="N" onclick="challengeGuess()">N</div><div id="o" value="O" onclick="challengeGuess()">O</div><div id="p" value="P" onclick="challengeGuess()">P</div><div id="q" value="Q" onclick="challengeGuess()">Q</div><div id="r" value="R" onclick="challengeGuess()">R</div><div id="s" value="S" onclick="challengeGuess()">S</div><div id="t" value="T" onclick="challengeGuess()">T</div><div id="u" value="U" onclick="challengeGuess()">U</div><div id="v" value="V" onclick="challengeGuess()">V</div><div id="w" value="W" onclick="challengeGuess()">W</div><div id="x" value="X" onclick="challengeGuess()">X</div><div id="y" value="Y" onclick="challengeGuess()">Y</div><div id="z" value="Z" onclick="challengeGuess()">Z</div>
+        </div>
+        <a href="stage2level2.html"  style="text-decoration:none;"><div id="home">Destroy Pathogen!</div></a>
+        <div id="again" onClick="reset()">Play again</div>
+       
+       <p id="vidSent"><span id="vidLink" onClick="video()"></span></p> 
+    </div>
+</div>
+<audio controls autoplay>
+    <source src="stage 2.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio>
+</body>
+</html>
